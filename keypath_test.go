@@ -14,6 +14,7 @@ func TestUnpack(t *testing.T) {
 		e   interface{}
 		err error
 	}{
+
 		{
 			d: "map",
 			v: map[string]string{
@@ -222,7 +223,7 @@ func TestUnpack(t *testing.T) {
 			},
 		},
 	} {
-		a, err := unpack(tc.v)
+		a, err := Unpack(tc.v)
 		assert.Equal(t, tc.e, a, tc.d)
 		assert.Equal(t, tc.err, err)
 	}
